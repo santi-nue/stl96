@@ -33,7 +33,7 @@ jobs:
    
      # Step 5: Upload artifact
     - name: Upload Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: mkdocs-dist
         path: /home/runner/work/stl96/stl96/dist/
