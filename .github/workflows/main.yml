@@ -31,7 +31,14 @@ jobs:
         pyinstaller --clean --noconfirm --recursive-copy-metadata mkdocs \
         --collect-submodules mkdocs --collect-data mkdocs --onefile --name mkdocs-bin mkdocs_entry.py
    
-           
+     # Step 5: Upload artifact
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: mkdocs-dist
+        path: /home/runner/work/stl96/stl96/dist/
+
+          
        
     # Step 5: Deploy MkDocs site to GitHub Pages
     - name: Deploy Site
