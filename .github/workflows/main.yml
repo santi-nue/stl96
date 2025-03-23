@@ -29,7 +29,7 @@ jobs:
     - name: Build MkDocs Executable
       run: |
         pyinstaller --clean --noconfirm --recursive-copy-metadata mkdocs \
-        --collect-submodules mkdocs --collect-data mkdocs --onefile --name mkdocs-bin
+        --collect-submodules mkdocs --collect-data mkdocs --onefile --name mkdocs-bin mkdocs_entry.py
    
            
        
