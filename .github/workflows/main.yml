@@ -24,13 +24,16 @@ jobs:
         python -m pip install --upgrade pip
         pip install mkdocs pyinstaller
 
+    
+
     # Step 4: Build MkDocs executable with PyInstaller
     - name: Build MkDocs Executable
       run: |
            pyinstaller --clean --noconfirm --recursive-copy-metadata mkdocs \
            --collect-submodules mkdocs --collect-data mkdocs --onefile --name mkdocs-bin \
            $(python -c "import os; import mkdocs; print(os.path.join(os.path.dirname(mkdocs.__file__), 'commands', 'mkdocs'))")
-        
+
+       
     # Step 5: Deploy MkDocs site to GitHub Pages
     - name: Deploy Site
       uses: JamesIves/github-pages-deploy-action@v4
